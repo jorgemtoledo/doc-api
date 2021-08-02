@@ -101,3 +101,15 @@ properties:
     type: string
     example: "Apto 001"
     description: complemento
+  languages:
+    type: array
+    items:
+      $ref: ../../parameters/Idioma.yaml
+  academicEducations:
+    type: array
+    items:
+      $ref: ../../parameters/FormacaoAcademica.yaml
+  professionalExperiences:
+    type: array
+    items:
+      $ref: ../../parameters/ExperienciaProfissional.yaml
