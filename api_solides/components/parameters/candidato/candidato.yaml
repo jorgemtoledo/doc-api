@@ -1,0 +1,26 @@
+type: object
+required: 
+- name
+- email
+- sendResultToEmail
+- expirationDate
+properties:
+  name:
+    type: string
+    example: José da Silva
+    description: nome completo da pessoa que irá responder o passaporte 
+  email:
+    type: string
+    example: jose@example.com
+    description: email para o qual será enviado o passaporte
+  sendResultToEmail:
+    type: boolean
+    example: true
+    description: |
+      se marcado como true, o resultado do teste será enviado automaticamente para o email cadastrado
+    default: false
+  expirationDate:
+    type: string
+    format: date
+    example: "12/09/2017"
+    description: data de expiração do passaporte

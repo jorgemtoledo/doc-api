@@ -1,0 +1,38 @@
+type: object
+properties:
+  zipCode:
+    type: string
+    example: "00.000-000"
+    description: cep
+  streetName:
+    type: string
+    example: "Rua Api"
+    description: logradouro
+  additionalInformation:
+    type: string
+    example: "Apto 001"
+    description: complemento
+  number:
+    type: string
+    example: "001"
+    description: número
+  neighborhood:
+    type: string
+    example: "Teste"
+    description: bairro
+  city:
+    type: object
+    properties:
+      name: 
+        type: string
+        description: cidade
+        example: Belo Horizonte
+      state: 
+        type: object
+        properties: 
+          name: 
+            type: string
+            example: Minas Gerais
+          initials:
+            type: string
+            example: MG

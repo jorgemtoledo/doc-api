@@ -1,0 +1,22 @@
+get:
+  tags:
+    - Motivo de Demissões
+  summary: Busca por todos motivos de demissão
+  description: |
+    Busca por todos motivos de demissão na empresa
+  operationId: searchMotivoDemissoes
+  responses:
+    200:
+      description: Array de Motivos de Demissão
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/MotivoDemissao.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml 
+    404:
+      $ref: ../../components/responses/Notfound.yaml

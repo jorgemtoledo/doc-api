@@ -1,11 +1,12 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
 apiDefinitions:
-  main: openapi/openapi.yaml
+  main: api_solides/api_v_1_0_18.yaml
 lint:
   extends:
     - recommended
   rules:
     no-unused-components: warning
+    no-ambiguous-paths: off
 referenceDocs:
   htmlTemplate: ./docs/index.html
   theme:

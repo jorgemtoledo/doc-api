@@ -1,0 +1,46 @@
+get:
+  tags:
+    - Absenteísmos
+  summary: Busca por todos absenteísmos
+  description: |
+    Busca por todos absenteísmos da empresa
+  operationId: searchAbsenteismos
+  responses:
+    200:
+      description: Array de todos os absenteísmos cadastrados
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Absenteismo.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml 
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+
+post:
+  tags:
+    - Absenteísmos
+  summary: Registra um novo absenteísmo
+  operationId: addAbsenteismo
+  description: Registra um novo absenteísmo
+  requestBody:
+    $ref: ../../components/requestBodies/Absenteismo.yaml
+  responses:
+    201:
+      description: Record created successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Absenteismo.yaml
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed

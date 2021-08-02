@@ -1,0 +1,22 @@
+get:
+  tags:
+    - Profiler
+  summary: Busca pelos profilers dos colaboradores da empresa
+  description: |
+    Busca pelos profilers dos colaboradores da empresa
+  operationId: searchProfilers
+  responses:
+    200:
+      description: Array de com profiler dos colaboradores ativos e inativos
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Profiler.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml 
+    404:
+      $ref: ../../components/responses/Notfound.yaml

@@ -1,0 +1,46 @@
+get:
+  tags:
+    - Passaportes
+  summary: Busca por todos passaportes
+  description: |
+    Busca por todos passaportes da empresa
+  operationId: searchPassaportes
+  responses:
+    '200':
+      description: Array de Passaportes
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Passaporte.yaml
+    '400':
+      description: Bad request
+    '401':
+      $ref: ../../components/responses/Unauthorized.yaml 
+    '404':
+      $ref: ../../components/responses/Notfound.yaml
+
+post:
+  tags:
+    - Passaportes
+  summary: Cria um novo passaporte
+  operationId: addPassaporte
+  description: Cria um novo passaporte
+  requestBody:
+    $ref: ../../components/requestBodies/Candidato.yaml
+  responses:
+    201:
+      description: Record created successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Passaporte.yaml
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed

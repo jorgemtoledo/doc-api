@@ -1,0 +1,22 @@
+get:
+  tags:
+    - Cargos
+  summary: Busca por cargos cadastrados
+  description: |
+    Busca por cargos cadastrados da empresa
+  operationId: searchCargos
+  responses:
+    200:
+      description: Array de cargos cadastrados
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Cargo.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml 
+    404:
+      $ref: ../../components/responses/Notfound.yaml

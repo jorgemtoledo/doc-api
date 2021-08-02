@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../parameters/questionario/responder.yaml
+description: Parâmetro de criação do questionário profiler.
+required: true

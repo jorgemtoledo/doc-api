@@ -1,0 +1,68 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Nome do candidato
+    example: "Fulano"
+  email:
+    type: string
+    description: Email do candidato
+    example: "fulano@email.com"
+  idNumber:
+    type: number
+    description: CPF do candidato
+    example: "49556733418"
+  gender:
+    type: string
+    description: Sexo do candidato
+    example: "Feminino"
+  start:
+    type: string
+    format: date-time
+    description: Data e hora do início do teste
+    example: "2019-01-21 17:10:00"
+  end:
+    type: string
+    format: date-time
+    description: Data e hora do fim do teste
+    example: "2019-01-21 17:19:10"
+  racional1:
+    type: boolean
+    description: Adjetivo
+    example: true
+  rotineiro1:
+    type: boolean
+    description: Adjetivo
+    example: true
+  bemquisto1:
+    type: boolean
+    description: Adjetivo
+    example: true
+  destacado1:
+    type: boolean
+    description: Adjetivo
+    example: true
+  pessimista1:
+    type: boolean
+    description: Adjetivo
+    example: true
+  racional2:
+    type: boolean
+    description: Desejo
+    example: true
+  rotineiro2:
+    type: boolean
+    description: Desejo
+    example: true
+  bemquisto2:
+    type: boolean
+    description: Desejo
+    example: true
+  destacado2:
+    type: boolean
+    description: Desejo
+    example: true
+  pessimista2:
+    type: boolean
+    description: Desejo
+    example: true

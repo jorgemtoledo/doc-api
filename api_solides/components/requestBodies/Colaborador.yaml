@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../parameters/colaborador/colaborador.yaml
+description: Parâmetros para registrar um colaborador.
+required: true

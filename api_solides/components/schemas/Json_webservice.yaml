@@ -1,0 +1,205 @@
+type: object
+description: Json retorna dados da empresa
+example:
+  codrhpro: null
+  idioma: Portugues
+  imagemcabecalho: null
+  nome: Maria de Fátima Souza
+  perfil: EA
+  data: null
+  email: email@example.com.br
+  forca_candidato: 58.620689655172
+  nivelenergia: Alta
+  indicestress: 6.54
+  nivelestress: Baixo
+  ia: 0.12919896640826
+  ia_nivel: Norm Baixo
+  moral: 0.9622641509434
+  moral_nivel: Norm Baixo
+  indice_positivo: 8.9652520379661
+  nivelip: Muito Alto
+  amplitude: 2.0671834625323
+  amplitude_nivel: Baixa
+  tempoconsumido: 4'35"
+  niveltempo: Normal
+  flexibilidade: '16.56'
+  flex_nivel: Alto
+  validacao_teste: ' Mostra-se sobredotado e de muitas qualidades.<br>Perfis extremamente equalizados.<br>O Resultado pode ser interpretado como um reflexo verdadeiro do candidato no teste. Verificar Perfil positivo maior.<br>'
+  perc_executor2colp: 87.096774193548
+  perc_executor2coln: 22.330097087379
+  perc_executor: 26.09819121447
+  nivel_d1pi: (A)
+  perc_comunicador2sanp: 77.880184331797
+  perc_comunicador2sann: 6.4220183486239
+  perc_comunicador: 24.031007751938
+  nivel_d2pi: (B)
+  perc_planejador2flep: 95.238095238095
+  perc_planejador2flen: 0
+  perc_planejador: 24.677002583979
+  nivel_d3pi: (A)
+  perc_analista2melp: 85.849056603774
+  perc_analista2meln: 9.8484848484848
+  perc_analista: 25.193798449612
+  nivel_d4pi: (A)
+  d1pi: '1.10'
+  d2pi: '-0.97'
+  d3pi: '-0.32'
+  d4pi: '0.19'
+  d5: '-1.14'
+  d6: '-2.00'
+  d7: '0.83'
+  d8: '2.31'
+  d9: '-0.69'
+  d10: '-1.79'
+  d11: '0.60'
+  d12: '1.88'
+  g1_d1: -1.91
+  g1_d2: -3.179
+  g1_d3: 1.91
+  g1_d4: 3.179
+  g1_d5: '-5.18'
+  g1_d6: '-2.97'
+  g1_d7: '5.18'
+  g1_d8: '2.97'
+  g3_d1: -3.545
+  g3_d2: -3.0118
+  g3_d3: 4.526
+  g3_d4: 3.0745
+  dx: '-0.26'
+  dy: '-2.58'
+  dx2: '6.27'
+  dy2: '-2.34'
+  primeironome: Adriana
+  descricao_perfil: null
+  texto_informalidade: null
+  texto_extroversao: null
+  descricao_geralh: null
+  descricao_geralv: null
+  texto_decisao_tipo: Racional
+  texto_decisao_velocidade: Velocidade Normal
+  quadroatual: null
+  quadroatual_txt: null
+  textoperfil:
+    - 'é bastante formal e estruturada, com estilo vigoroso e até ríspida. Busca alto nível de qualidade em tudo o que faz e não se intimida em dizer o que pensa de maneira direta e contundente. É provavelmente um dos perfis mais voltados ao trabalho que a assuntos emocionais ou pessoais. Tende a ser distante e de algum modo isolada, preferindo ouvir seus próprios conselhos.'
+    - 'Se interessa por áreas onde possa trabalhar com detalhes e precisão. Tem tendência de corrigir as outras pessoas, dando muita ênfase nas falhas que cometem, mesmo que outras pessoas as considerem triviais ou insignificantes. Tem habilidade para trabalhar em projetos que exijam força de caráter.'
+    - 'Possui um grande senso de responsabilidade, é bastante cuidadosa com os detalhes e realiza muito bem suas tarefas com cuidado e atenção. É exigente com os membros de sua equipe, cobra perfeição e se irrita com os erros.'
+    - 'Tem bastante energia para alcançar metas com perfeição. As vezes fica frustrada quando não as alcança, mas logo recomeça.'
+    - 'O relacionamento interpessoal não é sua prioridade. Tende a ser breve e sucinta em sua comunicação, dando preferência a assuntos práticos. É desconfiada e prefere guardar os fatos para si mesmo, a não ser que seja absolutamente necessário compartilhá-los.'
+    - 'Prefere ambientes bastante organizados e estruturados, com um pessoal competente.'
+    - 'Fica impaciente, mas consegue produzir normalmente. Pode ficar extremamente exigente com sua equipe. Desgasta-se muito para cumprir suas tarefas se a pressão for grande, chegando a casos de comprometer sua saúde física e emocional.'
+    - 'Tolera bem as mudanças, desde que sejam previstas. Não gosta de ser surpreendida.'
+    - 'As sub-características deste tipo são: Determinação, Automotivação, Exatidão e Sensibilidade.'
+    - 'Falta de domínio da situação e intolerância por parte de sua gerência, podem desmotivá-la. Desprestígio e ineficiência.'
+    - 'Fulana é muito determinada, persistente e não tem medo de trabalhar duro. Reconhece problemas que outros não conseguem reconhecer e não tem medo de fazer perguntas. Ela questiona a autoridade e fala o que pensa, mas não cria confrontos de propósito. Ela só quer saber o que é melhor e o que é certo. Ela mantém padrões elevados para si mesma e para os outros. Não se intimida com conflitos e os recebe bem se acha que vão ajudar a resolver um problema. Ela soluciona problemas de formas extremamente criativas. Não se importa com ambiguidades e é determinada a resolver qualquer problema. Ela é tão determinada a fazer um trabalho que resolutamente avalia todas as opções possíveis. Apesar de se esforçar para concluir tarefas de forma rápida, Fulana é perfeccionista e quer ter certeza de que satisfaz seu próprio padrão elevado de qualidade. Ela prefere trabalhar sozinha sempre que possível. Um motivo disso é seu desejo de controle. Ao trabalhar com outros, ela fica quieta e demora um longo tempo para desenvolver confiança. Não é muito emotiva e acredita fortemente que emoções e negócios não se misturam. Por não dar importância a apelos emocionais, talvez ache um desafio motivar os outros.'
+    - É motivada pela realização e eficiência. Busca o sucesso pessoal e gosta também de sentir que está concluindo projetos de maneira eficiente e precisa. Seu estilo pouco expansivo torna difícil perceber se está ou não motivada.
+    - 'Autorrealização, segurança e reconhecimento.'
+    - 'Seu estilo de comunicação é direta, às vezes confrontativo. Fulana faz perguntas difíceis e se expressa quando necessário. É mais provável que crie caso quando seus padrões são violados. Visto que não dá muita importância a ser popular, ela não se preocupa com gentilezas que considera sem sentido, como rir, balançar a cabeça e até mesmo sorrir. Ela é muito genuína e transparente, e nunca fingiria que pensa ou se sente de outra forma. Muitas vezes, separa argumentos em sua mente e gosta de debater. Suas fortes opiniões se baseiam no modo concreto como vê o mundo. Fulana tem uma visão clara de como as coisas devem ser, de como uma organização deve funcionar e de como as pessoas devem reagir e se comportar. É improvável que ela se torne explosiva ou inadequadamente agressiva. Em vez disso, seus sinais de desprezo não são verbais. Suas expressões faciais, seu olhar e sua linguagem corporal revelam seus sentimentos negativos.'
+    - 'Competência, capricho e responsabilidade.'
+    - 'Seu tipo de personalidade tem muitas vantagens. Por exemplo, Fulana é competitiva e motivada a cumprir suas metas. Ela se dá bem com os outros, mas prefere competir consigo mesma para fazer coisas maiores e melhores. Ela é uma excelente solucionadora de problemas e não se intimida com obstáculos. É cética e questionadora, o que lhe dá uma grande capacidade de identificar potenciais problemas antes dos outros. Ela não tem medo de falar o que pensa, mesmo quando sabe que vai ter problemas por causa disso. Exige de si mesma e dos outros que as metas sejam atingidas. Ela tem uma forte capacidade de separar os sentimentos dos problemas. No trabalho, isso a ajuda a formular um plano eficiente sem se envolver na política do escritório ou em questões pessoais. Fulana tem opiniões fortes e está comprometida a tomar decisões objetivas. Da mesma forma, não deixa que questões pessoais atrapalhem e nunca pede desculpas por não ter cumprido metas. Ela está firmemente convencida de que qualquer coisa pode ser feita com trabalho duro.'
+    - 'No que diz respeito ao seu trabalho, Fulana tem um equilíbrio saudável entre velocidade e qualidade. Alguns tipos de personalidade valorizam tanto a qualidade que demoram demais para concluir um projeto. Por outro lado, alguns tipos de personalidade são tão orientados ao sucesso que concluem o trabalho rapidamente, sem gastar tempo refinando. Ela é muito boa em organizar e planejar seu trabalho de uma forma que haja alta qualidade dentro de um prazo razoável. Curiosamente, nem sempre toma decisões de forma rápida. Como perfeccionista, Fulana quer garantir que sua escolha seja a certa e vai gastar um tempo significativo excluindo as outras opções. Um de seus pontos fortes em planejamento é sua capacidade de prever os possíveis problemas em um plano. Ao passo que outros podem achá-la negativa, sua previsão poupa tempo, problemas e até mesmo dinheiro no futuro. Por pesquisar cuidadosamente as opções possíveis ao fazer um plano, ela tende a ser bastante organizada.'
+    - "Fulana é motivado por realizações e pelo domínio de objetivos pessoais. É criativa e nem sempre resolve problemas de uma forma convencional. Ela é motivada a cumprir suas metas exclusivas, não necessariamente as metas dos outros. Na verdade, é muito mais competitiao consigo mesma do que com qualquer um em sua vida pessoal ou profissional. Por ser tão motivada, tende a concluir até mesmo as tarefas mais complexas de forma rápida. Ela considera a incompetência algo humilhante e fará de tudo para evitá-la. Dá muita importância à autossuficiência e é motivada a alcançar metas de forma independente. Considera extremamente importante estar certa e debate com frequência. Quando tem uma ideia, não consegue tirá-la da mente. Fulana se esforça muito para estar \x93certa\x94 e manter seus padrões elevados de vida e de trabalho. Avalia várias soluções possíveis antes de lidar com um problema, para se certificar de que isso seja feito corretamente. Além de se empenhar em ser correta, ela é motivada a alcançar resultados tangíveis. Também é motivada a ser a melhor no que faz. Ela acredita fortemente que qualquer pessoa pode melhorar a própria situação sozinha e atender a demandas desafiadoras."
+    - 'Em geral, Fulana não deseja nem liderar nem seguir outros. No entanto, oportunidades de liderança surgem em seu caminho por causa de seus padrões elevados e sua impressionante ética de trabalho. Como perfeccionista, ela tem padrões muito elevados para si e para os membros de sua equipe. Isso, naturalmente, dá resultados. Ela não se importa em colaborar, mas pode ficar impaciente ao trabalhar em equipe. Se acha que alguém está fazendo algo errado ou o estilo de trabalho de outra pessoa não combina com o seu, ela prefere fazê-lo sozinha. Como as tarefas vêm antes das emoções, Fulana faz pouco esforço para se relacionar com sua equipe, mesmo que realmente goste de seus colegas. Funcionários que procuram cordialidade nas relações interpessoais podem não entendê-la ou se sentir desvalorizados.'
+    - 'Fulana tem opiniões fortes, uma linha independente bem definida e uma aparência rígida. Além disso, julga a si mesma por seu nível de autossuficiência e mantém padrões elevados para seu trabalho. Um gerente eficaz lhe dará o espaço que ela precisa para trabalhar e criar no âmbito de seus próprios valores e julgamentos. Um gerente eficaz reconhecerá suas excelentes habilidades de pensamento crítico e lhe dará trabalhos que envolvam criação e a compreensão de argumentos complexos. Fulana não se intimida com críticas. Embora alguns gerentes não se sintam à vontade para criticar outros, ela se beneficiará de críticas e orientações construtivas. Ela tem um bom equilíbrio entre velocidade e qualidade. Um bom gerente entenderá que ela valoriza as duas coisas, mas precisa trabalhar no seu próprio ritmo para atender aos seus padrões elevados.'
+    - 'Fulana tem uma visão bastante desenvolvida e seu estilo de tomar decisões reflete isso. Quando precisa tomar uma decisão importante, ela põe mãos à obra. Talvez não seja tão popular porque não leva aspectos emocionais em consideração ao tomar uma decisão. Ela toma decisões diárias de modo rápido e fácil. Visto que tem um conjunto bem definido de valores, a maioria das decisões que toma se ajusta de forma natural. Decisões maiores, porém, como voltar a estudar, procurar outro emprego ou se mudar de estado, são mais difíceis para ela. O desejo de tomar a decisão correta a leva a ser muito cautelosa. Fulana pesquisa cuidadosamente todas as possíveis soluções para um problema. Por exemplo, ao decidir se vai aceitar emprego em uma nova cidade, ela encara como uma missão saber tudo sobre a organização e a oportunidade, bem como prever possíveis problemas com a decisão. Embora queira ser correta em tudo, ela também deseja resultados tangíveis. Seu processo de tomar de decisões se esforça muito para equilibrar esses ideais.'
+  txtrodape: null
+  tituloperfil:
+    - Inicial
+    - Habilidades básicas
+    - Desempenho de tarefas
+    - Forma como busca resultados
+    - Relacionando-se com os outros
+    - Ambiente de trabalho
+    - Reação sob pressão
+    - Relação com mudanças
+    - Sub-características
+    - Fatores de afastamento
+    - Habilidades Comuns
+    - Fatores motivadores
+    - Necessidades básicas
+    - Estilo de Comunicação
+    - Valoriza os outros por...
+    - Vantagens
+    - Organização e Planejamento
+    - Fatores Motivacionais
+    - Estilo de Liderança
+    - Estilo de Gestão Requerido
+    - Tomando Decisões
+  analista: 19.5
+  executor: 20.2
+  planejador: 19.1
+  comunicador: 18.6
+  analistan: 1.3
+  executorn: 2.3
+  planejadorn: 0
+  comunicadorn: 0.7
+  analistap: 18.2
+  executorp: 18.9
+  planejadorp: 20
+  comunicadorp: 16.9
+  itens_marcados: 51
+  analista2: 22.2
+  executor2: 19.4
+  planejador2: 21
+  comunicador2: 18.7
+  analistap2: 20.9
+  executorp2: 18.1
+  planejadorp2: 21.9
+  comunicadorp2: 17
+  analistan2: 1.3
+  executorn2: 2.3
+  planejadorn2: 0
+  comunicadorn2: 0.7
+  itens_marcados2: 53
+  sexo: feminino
+  REMOTE_ADDR: null
+  datahoje: null
+  horainicio: '11:31:37'
+  horafinal: '11:36:12'
+  usuarioin: null
+  senhain: null
+  nivel_executor: 4
+  nivel_comunicador: 3
+  nivel_planejador: 4
+  nivel_analista: 4
+  barraverde_E: 93.301033591731
+  barraverde_C: 85.910852713178
+  barraverde_P: 88.220284237726
+  barraverde_A: 90.067829457364
+  barracinza_E: 49.698966408269
+  barracinza_C: 57.089147286822
+  barracinza_P: 54.779715762274
+  barracinza_A: 52.932170542636
+  incitabilidade: '44.22'
+  nivel_incitab: Norm Baixa
+  energperfil: '57.51'
+  nivel_energperfil: Norm Alta
+  idrandom: 3p90hb6wpvnjqr9
+  cerebro_esq: 49.870801033592
+  cerebro_dir: 50.129198966408
+  cerebro_fre: 76.937984496124
+  cerebro_tra: 73.062015503876
+  diag_sup_esq: 37.790697674419
+  diag_inf_esq: 37.015503875969
+  diag_inf_dir: 36.046511627907
+  diag_sup_dir: 39.147286821705
+  agressividade: 48.418371126948
+  aptidao_para_habilidades_tecnicas: 55.798612376323
+  automotivacao: 45.000722139219
+  capacidade_de_sonhar: 45.000722139219
+  concentracao: 55.798612376323
+  condescendencia: 55.798612376323
+  hab_artistica: 56.510929050907
+  detalhismo: 56.510929050907
+  dominancia: 48.526428172818
+  empatia: 52.665727886457
+  exatidao: 56.510929050907
+  entusiasmo: 45.000722139219
+  extroversao: 48.526428172818
+  facilidade_em_lidar_com_mudancas: 48.526428172818
+  formalidade: 73.939946995892
+  independencia: 48.418371126948
+  multi_tarefas: 48.418371126948
+  paciencia: 52.665727886457
+  se_desenvolve_pelo_relacionamento: 64.150258288039
+  se_desenvolve_pelo_trabalho: 73.939946995892
+  sociabilidade: 45.000722139219

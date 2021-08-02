@@ -1,0 +1,62 @@
+type: object
+properties:
+  idNumber:
+    type: string
+    example: "22426759666"
+    description: cpf do colaboraor
+  rg:
+    type: string
+    example: "390569422"
+    description: rg do colaborador
+  dispatchDate:
+    type: string
+    example: "02/01/2019"
+    description: data de expedição do rg
+  issuingBody:
+    type: string
+    example: "SSP"
+    description: orgão emissor do rg
+  voterRegistration:
+    type: string
+    example: "282850080221"
+    description: título de eleitor do colaborador
+  electoralZone:
+    type: string
+    example: "131"
+    description: zona eleitoral do colaborador
+  electoralSection:
+    type: string
+    example: "Seção 29"
+    description: seção eleitoral do colaborador
+  ctpsNum:
+    type: string
+    example: "22426759"
+    description: ctps num do colaborador
+  ctpsSerie:
+    type: string
+    example: "2242"
+    description: ctps serie do colaborador
+  reservist:
+    type: string
+    example: "39330569422"
+    description: número de reservista do colaborador
+  nqc:
+    type: string
+    example: "29998619616"
+    description: cnh do colaborador
+  bank:
+    type: string
+    example: "Bradesco"
+    description: nome do banco do colaborador
+  agency:
+    type: string
+    example: "2202"
+    description: número da agência do colaborador
+  checkingsAccount:
+    type: string
+    example: "0186958-2"
+    description: conta corrente do colaborador
+  pis:
+    type: string
+    example: "48348426997"
+    description: pis do colaborador

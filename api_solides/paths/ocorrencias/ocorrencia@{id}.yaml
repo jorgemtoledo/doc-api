@@ -1,0 +1,51 @@
+get:
+  tags:
+    - Ocorrências
+  summary: Busca por uma ocorrência
+  description: |
+    Busca ocorrência pelo id
+  operationId: searchOcorrencia
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único da ocorrência
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    200:
+      description: Ocorrência específica 
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Ocorrencia.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+
+delete:
+  tags: 
+  - Ocorrências
+  operationId: deleteOcorrencia
+  summary: Deleta uma ocorrência
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único da ocorrência
+    required: true
+  responses:
+    204:
+      $ref: ../../components/responses/Status_204.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422: 
+      $ref: ../../components/responses/Status_422.yaml

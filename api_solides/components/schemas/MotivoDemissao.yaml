@@ -1,0 +1,11 @@
+type: object
+properties:
+  id:
+    type: integer
+    example: 1
+    format: int64
+    description: identificador único do motivo
+  name:
+    type: string
+    example: Falta
+    description: nome dado ao motivo de demissão

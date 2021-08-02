@@ -1,0 +1,90 @@
+get:
+  tags:
+    - Vagas
+  summary: Busca por uma vaga
+  description: |
+    Busca por uma vaga na empresa
+  operationId: searchVaga
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único da vaga
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    '200':
+      description: Vaga específica
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Vaga.yaml
+    '400':
+      description: Bad request
+    '401':
+      $ref: ../../components/responses/Unauthorized.yaml 
+    '404':
+      $ref: ../../components/responses/Notfound.yaml
+
+put:
+  tags:
+    - Vagas
+  summary: Atualiza informações de uma vaga
+  operationId: updateVaga
+  description: Atualiza informações de uma vaga
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único da vaga
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  requestBody:
+    $ref: ../../components/requestBodies/Vaga.yaml
+  responses:
+    200:
+      description: Record updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Vaga.yaml
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed
+
+delete:
+  tags:
+    - Vagas
+  summary: Deleta uma vaga
+  operationId: deleteVaga
+  description: |
+    Deleta uma vaga
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único da vaga
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    204:
+      description: Record deleted successfully
+    400:
+      description: Bad request
+    401:
+      description: Unauthorized
+    404:
+      description: Not found
+    422:
+      description: Record can not be deleted

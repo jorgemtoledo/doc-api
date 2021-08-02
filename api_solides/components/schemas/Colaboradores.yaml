@@ -1,0 +1,37 @@
+type: object
+properties:
+  id:
+    description: identificador único do colaborador
+    readOnly: true
+    allOf:
+      - type: integer
+        example: 1
+        format: int64
+  name:
+    type: string
+    example: Maria de Fátima Souza
+    description: nome completo do colaborador
+  idNumber:
+    type: string
+    example: "22426759666"
+    description: cpf do colaboraor
+  email:
+    type: string
+    example: email@example.com.br
+    description: email do colaborador
+  registration:
+    type: string
+    example: "381998"
+    description: matrícula do colaborador
+  dateAdmission:
+    type: string
+    example: "01/01/2018"
+    description: data de admissão
+  active:
+    type: boolean
+    example: true
+    description: indica se o colaborador está ativo na empresa
+  position:
+    $ref: ../../components/schemas/Cargo.yaml
+  departament:
+    $ref: ../../components/schemas/Departamento.yaml

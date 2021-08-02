@@ -1,0 +1,46 @@
+get:
+  tags:
+    - Vagas
+  summary: Busca por todas as vagas
+  description: |
+    Busca por todas as vagas da empresa
+  operationId: searchVagas
+  responses:
+    200:
+      description: Array de todas vagas cadastradas
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Vaga.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml 
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+
+post:
+  tags:
+    - Vagas
+  summary: Registra uma nova vaga
+  operationId: addVaga
+  description: Registra uma nova vaga
+  requestBody:
+    $ref: ../../components/requestBodies/Vaga.yaml
+  responses:
+    201:
+      description: Record created successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Vaga.yaml
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed

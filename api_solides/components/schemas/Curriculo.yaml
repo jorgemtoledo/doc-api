@@ -1,0 +1,97 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    example: 1
+    description: identificador único do currículo
+  fullName:
+    type: string
+    example: Maria de Fátima Souza
+    description: nome completo
+  mainEmail:
+    type: string
+    example: principal@example.com.br
+    description: email principal
+  secondaryEmail:
+    type: string
+    example: secundario@example.com.br
+    description: email secundário
+  idNumber:
+    type: string
+    example: "012345678909"
+    description: cpf
+  gender:
+    type: string
+    example: "Feminino"
+    description: gênero
+  phone:
+    type: string
+    example: "(31) 33333333"
+    description: telefone
+  mobile:
+    type: string
+    example: "(31) 999999999"
+    description: celular
+  birthDate:
+    type: string
+    example: "01/01/1987"
+    description: data de nascimento
+  maritalStatus:
+    type: string
+    example: "Solteiro"
+    description: estado civil
+  seniority:
+    type: string
+    example: "Trainee"
+    description: senioridade
+  skypeGtalk:
+    type: string
+    example: "Fulano de Tal"
+    description: skype ou gtalk
+  linkedin:
+    type: string
+    example: "https://www.linkedin.com/fulano"
+    description: linkedin
+  facebook:
+    type: string
+    example: "https://www.facebook.com/fulano"
+    description: facebook
+  youtube:
+    type: string
+    example: "https://www.youtube.com/fulano"
+    description: canal do youtube
+  introductionVideoURL:
+    type: string
+    example: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    description: video de apresentação do candidato
+  origin:
+    type: string
+    example: "Banco de talentos"
+    description: origem da entrada do candidato na empresa
+  photo:
+    type: string
+    example: "iVBORw0KGgoAAAANSUhEUgAABJQAAAXWCAYAAADVTfeWAAAgAElEQVR4XuzdC5xN5f7H8"
+    description: "Imagem codificada em base64."
+  photo_extension:
+    type: string
+    example: ".jpg"
+    description: "Extensão da imagem"
+  adress:
+    $ref: ../../components/schemas/Endereco.yaml
+  languages:
+    type: array
+    items:
+      $ref: ../../components/schemas/Idioma.yaml
+  notes:
+    type: array
+    items:
+      $ref: ../../components/schemas/Observacao.yaml
+  professionalExperiences:
+    type: array
+    items:
+      $ref: ../../components/schemas/ExperienciaProfissional.yaml
+  academicEducations:
+    type: array
+    items:
+      $ref: ../../components/schemas/FormacaoAcademica.yaml

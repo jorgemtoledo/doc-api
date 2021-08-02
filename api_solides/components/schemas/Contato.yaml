@@ -1,0 +1,22 @@
+type: object
+properties:
+  phone:
+    type: string
+    example: "(31) 33333333"
+    description: telefone
+  cellPhone:
+    type: string
+    example: "(31) 999999999"
+    description: celular
+  emergencyPhoneNumber:
+    type: string
+    example: "(31) 999999999"
+    description: telefone de emergência 
+  personalEmail:
+    type: string
+    example: emailpessoal@example.com.br
+    description: email pessoal
+  corporateEmail:
+    type: string
+    example: emailcoorporativa@example.com.br
+    description: email corporativo

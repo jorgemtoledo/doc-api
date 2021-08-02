@@ -1,0 +1,15 @@
+post:
+  tags:
+    - Questionários
+  summary: Responde um questionário profiler
+  operationId: post_questionarios_responder
+  description: Responde um questionário profiler fornecendo informações pessoais do candidato e as chaves identificadora dos adjetivos e desejos do candidato.
+  requestBody:
+    $ref: ../../components/requestBodies/Questionario.yaml
+  responses:
+    201:
+      description: Questionário respondido com sucesso
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    422:
+      description: Unprocessed

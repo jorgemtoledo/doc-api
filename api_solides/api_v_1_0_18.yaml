@@ -1,0 +1,110 @@
+openapi: 3.0.2
+info:
+  version: 1.0.18
+  title: API Solides
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  contact:
+    name: Base
+    url: 'https://system.solides.com/{locale}/api/v1/'
+  x-logo:
+    url: 'https://system.solides.com/assets/logo_solides_2021-f5de986164fc87279f39eb07cba54e34548fd74e25288bb4ee9dbaa6ab31d9e2.svg'
+
+  description: >
+    # Introdução
+      A API Sólides é RESTful, e assim podemos oferecer um conjunto de funcionalidades do nosso sistema para ter uma boa integração junto com o sistema da sua empresa. <br />
+      <strong>Nossa API de integração com o sistema Solides Gestão. A mesma oferece criação, edição, atualização de registros importantes para sua empresa como: </strong> <br />
+      Passaportes, Colaboradores, Ocorrências, Currículos e Vagas.
+      - <strong>Vantagens da Integração:</strong>
+        - Automatização
+        - Agilidade
+        - Certeza das informações
+        - Ganho de tempo
+        - Monitoramento em tempo real
+        - Expertise em integrações nível LATAM
+        - Redução de tempo da sua equipe de TI
+
+      - <strong>O que integramos:</strong>
+        - Ficha do Colaborador
+        - Cargos
+        - Departamentos
+        - Atualizações cadastrais
+        - Ficha do Colaborador
+        - Cadastro de Vagas
+      
+    # Autenticação
+      Em nossas requisições é obrigatório informar na URL base o parâmetro {locale} cujo os valores possvíeis são: pt-BR, ou es, ou en".
+      E todas devem ser autenticadas, esta autenticação é realizada a partir de um token, gerado a partir de nossa plataforma.
+      O token deve ser enviado no cabeçalho (header) da requisição HTTPS.
+
+      - <strong>Para gerar o token de acesso siga os seguintes passos:</strong>
+        - Acesse https://system.solides.com/pt-BR/usuarios/sign_in e logue com seu usuário.
+        - Acesse o sub-menu Configurações
+        - Na seção Ativar API de Integração, clique em Ativar API. Isso gerará um token único que deverá ser utilizado em todas as requisições.
+        - Configure a Header de sua requisição com essas duas variáveis:
+          - Content-Type: application/json
+          - authorization: Token token=[SEU TOKEN]
+# ----------------------------- Info -------------------------------------------#
+tags:
+  - name: Ocorrências
+    description: Ocorrências para os colaboradores da empresa
+  - name: Colaboradores
+    description: Colaboradores de sua empresa
+servers:
+  - url: 'https://system.solides.com/pt-BR/api/v1'
+paths:
+  /ocorrencias:
+    $ref: paths/ocorrencias/ocorrencia.yaml
+  '/ocorrencias/{id}':
+    $ref: './paths/ocorrencias/ocorrencia@{id}.yaml'
+  /colaboradores:
+    $ref: paths/colaboradores/colaborador.yaml
+  '/colaboradores/{id}':
+    $ref: './paths/colaboradores/colaborador@{id}.yaml'
+  '/colaboradores/{id}/demitir':
+    $ref: './paths/colaboradores/colaborador@{id}@demitir.yaml'
+  '/colaboradores/existe/{cpf}':
+    $ref: './paths/colaboradores/colaborador@existe@{cpf}.yaml'
+  /departamentos:
+    $ref: paths/departamentos/departamento.yaml
+  '/departamentos/{id}':
+    $ref: './paths/departamentos/departamento@{id}.yaml'
+  /candidatos:
+    $ref: paths/candidatos/candidato.yaml
+  '/candidatos/{id}':
+    $ref: './paths/candidatos/candidato@{id}.yaml'
+  '/candidatos/{id}/relatorio/{option}':
+    $ref: './paths/candidatos/candidato@{id}@relatorio@{option}.yaml'
+  /curriculos:
+    $ref: paths/curriculos/curriculo.yaml
+  '/curriculos/{id}':
+    $ref: './paths/curriculos/curriculo@{id}.yaml'
+  '/curriculos/{cpf}/candidatar/{vaga_id}':
+    $ref: './paths/curriculos/curriculo@{cpf}@candidatar@{vaga_id}.yaml'
+  /vagas:
+    $ref: paths/vagas/vaga.yaml
+  "/vagas/{id}":
+    $ref: './paths/vagas/vaga@{id}.yaml'
+  /motivo_demissoes:
+    $ref: paths/motivo_demissoes/motivo_demissao.yaml
+  "/motivo_demissoes/{id}":
+    $ref: ./paths/motivo_demissoes/motivo_demissao@{id}.yaml
+  /cargos:
+    $ref: paths/cargos/cargo.yaml
+  "/cargos/{id}":
+    $ref: ./paths/cargos/cargo@{id}.yaml
+  /absenteismos:
+    $ref: paths/absenteismos/absenteismo.yaml
+  "/absenteismos/{id}":
+    $ref: paths/absenteismos/absenteismo@{id}.yaml
+  '/absenteismos/tangerino/{id}':
+    $ref: './paths/absenteismos/absenteismo@tangerino@{id}.yaml'
+  "/absenteismos/colaborador/{cpf}":
+    $ref: './paths/absenteismos/colaborador@{cpf}.yaml'
+  /profiler:
+    $ref: paths/profilers/profiler.yaml
+  "/profiler/{id}":
+    $ref: './paths/profilers/profiler@{id}.yaml'
+  "/questionarios/responder":
+    $ref: './paths/questionarios/responder.yaml'

@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Colaboradores
+  summary: Registra demissão de um colaborador
+  operationId: demitirColaborador
+  description: Registra demissão de um colaborador
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único da ocorrência
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  requestBody:
+    $ref: ../../components/requestBodies/DemitirColaborador.yaml
+  responses:
+    204:
+      description: Colaborador demitido
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed

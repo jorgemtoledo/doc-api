@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../parameters/vaga/vaga.yaml
+description: Parâmetros para registrar uma nova vaga
+required: true

@@ -1,0 +1,57 @@
+type: object
+properties:
+  id:
+    description: identificador único do colaborador
+    readOnly: true
+    allOf:
+      - type: integer
+        example: 1
+        format: int64
+  name:
+    type: string
+    example: Maria de Fátima Souza
+    description: nome completo do colaborador
+  email:
+    type: string
+    example: email@example.com.br
+    description: email do colaborador
+  gender:
+    type: string
+    example: "Feminino"
+    description: gênero
+  departamentId:
+    type: integer
+    format: int64
+    example: 1
+    description: identificador do departamento
+  positionId:
+    type: integer
+    format: int64
+    example: 1
+    description: identificador do cargo
+  dateAdmission:
+    type: string
+    example: "01/01/2018"
+    description: data de admissão
+  dateDismissal:
+    type: string
+    example: "02/01/2019"
+    description: data de demissão 
+  salary:
+    type: string
+    example: "R$ 3.890,00"
+    description: data de início do contrato
+  workShift:
+    type: string
+    example: Diurno
+    description: turno de trabalho do colaborador
+  perfil:
+    type: string
+    example: "EA"
+    description: perfil do colaborador com base no ultimo teste profiler
+  testDate:
+    type: string
+    example: "20/12/2017"
+    description: data do ultimo teste
+  profiler:
+    $ref: ../../components/schemas/Json_webservice.yaml

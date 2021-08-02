@@ -1,0 +1,22 @@
+get:
+  tags:
+    - Departamentos
+  summary: Busca por todos departamentos
+  description: |
+    Listar todas os departamentos da empresa
+  operationId: searchDepartamentos
+  responses:
+    '200':
+      description: Array de Departamentos
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Departamento.yaml
+    '400':
+      description: Bad request
+    '401':
+      $ref: ../../components/responses/Unauthorized.yaml 
+    '404':
+      $ref: ../../components/responses/Notfound.yaml

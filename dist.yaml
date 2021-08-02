@@ -1,0 +1,1343 @@
+openapi: 3.0.2
+info:
+  version: 1.0.18
+  title: API Solides
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  contact:
+    name: Base
+    url: 'https://system.solides.com/{locale}/api/v1/'
+  x-logo:
+    url: >-
+      https://system.solides.com/assets/logo_solides_2021-f5de986164fc87279f39eb07cba54e34548fd74e25288bb4ee9dbaa6ab31d9e2.svg
+  description: |
+    # Introdução
+      A API Sólides é RESTful, e assim podemos oferecer um conjunto de funcionalidades do nosso sistema para ter uma boa integração junto com o sistema da sua empresa. <br />
+      <strong>Nossa API de integração com o sistema Solides Gestão. A mesma oferece criação, edição, atualização de registros importantes para sua empresa como: </strong> <br />
+      Passaportes, Colaboradores, Ocorrências, Currículos e Vagas.
+      - <strong>Vantagens da Integração:</strong>
+        - Automatização
+        - Agilidade
+        - Certeza das informações
+        - Ganho de tempo
+        - Monitoramento em tempo real
+        - Expertise em integrações nível LATAM
+        - Redução de tempo da sua equipe de TI
+
+      - <strong>O que integramos:</strong>
+        - Ficha do Colaborador
+        - Cargos
+        - Departamentos
+        - Atualizações cadastrais
+        - Ficha do Colaborador
+        - Cadastro de Vagas
+      
+    # Autenticação
+      Em nossas requisições é obrigatório informar na URL base o parâmetro {locale} cujo os valores possvíeis são: pt-BR, ou es, ou en".
+      E todas devem ser autenticadas, esta autenticação é realizada a partir de um token, gerado a partir de nossa plataforma.
+      O token deve ser enviado no cabeçalho (header) da requisição HTTPS.
+
+      - <strong>Para gerar o token de acesso siga os seguintes passos:</strong>
+        - Acesse https://system.solides.com/pt-BR/usuarios/sign_in e logue com seu usuário.
+        - Acesse o sub-menu Configurações
+        - Na seção Ativar API de Integração, clique em Ativar API. Isso gerará um token único que deverá ser utilizado em todas as requisições.
+        - Configure a Header de sua requisição com essas duas variáveis:
+          - Content-Type: application/json
+          - authorization: Token token=[SEU TOKEN]
+tags:
+  - name: Ocorrências
+    description: Ocorrências para os colaboradores da empresa
+  - name: Colaboradores
+    description: Colaboradores de sua empresa
+servers:
+  - url: 'https://system.solides.com/pt-BR/api/v1'
+paths:
+  /ocorrencias:
+    get:
+      tags:
+        - Ocorrências
+      summary: Busca por todas ocorrências
+      description: |
+        Listar todas as ocorrências da empresa
+      operationId: searchOcorrencias
+      responses:
+        '200':
+          description: Array de Ocorrências
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ocorrencia'
+        '400':
+          description: Bad request
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+    post:
+      tags:
+        - Ocorrências
+      summary: Registra uma nova ocorrência
+      operationId: addOcorrencia
+      description: Registra uma nova ocorrência
+      requestBody:
+        $ref: '#/components/requestBodies/Ocorrencia'
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ocorrencia'
+        '400':
+          $ref: '#/components/responses/Status_400'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+        '422':
+          $ref: '#/components/responses/Notfound'
+  '/ocorrencias/{id}':
+    get:
+      tags:
+        - Ocorrências
+      summary: Busca por uma ocorrência
+      description: |
+        Busca ocorrência pelo id
+      operationId: searchOcorrencia
+      parameters:
+        - in: path
+          name: id
+          description: identificador único da ocorrência
+          required: true
+      responses:
+        '200':
+          description: Ocorrência específica
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ocorrencia'
+        '400':
+          description: Bad request
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+    delete:
+      tags:
+        - Ocorrências
+      operationId: deleteOcorrencia
+      summary: Deleta uma ocorrência
+      parameters:
+        - in: path
+          name: id
+          description: identificador único da ocorrência
+          required: true
+      responses:
+        '204':
+          $ref: '#/components/responses/Status_204'
+        '400':
+          description: Bad request
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+        '422':
+          $ref: '#/components/responses/Status_422'
+  /colaboradores:
+    get:
+      tags:
+        - Colaboradores
+      summary: Busca por todos colaboradores
+      description: |
+        Listar todos colaboradores da empresa
+      operationId: searchColaboradores
+      responses:
+        '200':
+          description: Array de todos os colaboradores cadastrados
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Colaboradores'
+        '400':
+          description: Bad request
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+    post:
+      tags:
+        - Colaboradores
+      summary: Registra um novo colaborador
+      operationId: addColaborador
+      description: Registra um novo colaborador
+      requestBody:
+        $ref: '#/components/requestBodies/Colaborador'
+      responses:
+        '201':
+          description: Record created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Colaboradores'
+        '400':
+          $ref: '#/components/responses/Status_400'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+        '422':
+          description: Unprocessed
+  '/colaboradores/{id}':
+    get:
+      tags:
+        - Colaboradores
+      summary: Busca por um colaborador
+      operationId: searchColaborador
+      parameters:
+        - in: path
+          name: id
+          description: identificador único do colaborador
+          required: true
+      responses:
+        '200':
+          description: Colaborador específico
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Colaborador'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    put:
+      tags:
+        - Colaboradores
+      summary: Atualiza informações de um colaborador
+      operationId: updateColaborador
+      description: Atualiza informações de um colaborador
+      requestBody:
+        $ref: '#/components/requestBodies/Colaborador'
+      responses:
+        '201':
+          description: Record created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Colaboradores'
+        '400':
+          $ref: '#/components/responses/Status_400'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+        '422':
+          description: Unprocessed
+  '/colaboradores/{id}/demitir':
+    post:
+      tags:
+        - Colaboradores
+      summary: Registra demissão de um colaborador
+      operationId: demitirColaborador
+      description: Registra demissão de um colaborador
+      parameters:
+        - in: path
+          name: id
+          description: identificador único da ocorrência
+          required: true
+      requestBody:
+        $ref: '#/components/requestBodies/DemitirColaborador'
+      responses:
+        '204':
+          description: Colaborador demitido
+        '400':
+          $ref: '#/components/responses/Status_400'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+        '422':
+          description: Unprocessed
+  '/colaboradores/existe/{cpf}':
+    get:
+      tags:
+        - Colaboradores
+      summary: Verifica se um colaborador existe na empresa
+      operationId: existeColaborador
+      parameters:
+        - in: path
+          name: cpf
+          description: Número do documento do colaborador
+          required: true
+      responses:
+        '200':
+          description: Colaborador específico
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExisteColaborador'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /departamentos:
+    get:
+      tags:
+        - Departamentos
+      summary: Busca por todos departamentos
+      description: |
+        Listar todas os departamentos da empresa
+      operationId: searchDepartamentos
+      responses:
+        '200':
+          description: Array de Departamentos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Departamento'
+        '400':
+          description: Bad request
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+  '/departamentos/{id}':
+    get:
+      tags:
+        - Departamentos
+      summary: Busca por um departamento
+      description: |
+        Busca por um departamento
+      operationId: searchDepartamento
+      parameters:
+        - in: path
+          name: id
+          description: identificador único da departamento
+          required: true
+      responses:
+        '200':
+          description: Departamento específico
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Departamento'
+        '400':
+          description: Bad request
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+  /candidatos:
+    get:
+      tags:
+        - Passaportes
+      summary: Busca por todos passaportes
+      description: |
+        Busca por todos passaportes da empresa
+      operationId: searchPassaportes
+      responses:
+        '200':
+          description: Array de Passaportes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Passaporte'
+        '400':
+          description: Bad request
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+    post:
+      tags:
+        - Passaportes
+      summary: Cria um novo passaporte
+      operationId: addPassaporte
+      description: Cria um novo passaporte
+      requestBody:
+        $ref: '#/components/requestBodies/Candidato'
+      responses:
+        '201':
+          description: Record created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Passaporte'
+        '400':
+          $ref: '#/components/responses/Status_400'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+        '422':
+          description: Unprocessed
+  '/candidatos/{id}':
+    get:
+      tags:
+        - Passaportes
+      summary: Busca por um passaporte
+      description: |
+        Busca por um passaporte na empresa
+      operationId: searchPassaporte
+      parameters:
+        - in: path
+          name: id
+          description: identificador único do candidato
+          required: true
+      responses:
+        '200':
+          description: Passaporte específico
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Passaporte'
+        '400':
+          description: Bad request
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+    put:
+      tags:
+        - Passaportes
+      summary: Atualiza informações de um passaporte
+      operationId: updatePassaporte
+      description: Atualiza informações de um Passaporte cujo status seja não iniciado
+      requestBody:
+        $ref: '#/components/requestBodies/Candidato'
+      responses:
+        '200':
+          description: Record updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Passaporte'
+        '400':
+          $ref: '#/components/responses/Status_400'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+        '422':
+          description: Unprocessed
+    delete:
+      tags:
+        - Passaportes
+      summary: Deleta um passaporte
+      operationId: deletePassaporte
+      description: |
+        Deleta um Passaporte cujo status seja não iniciado
+      parameters:
+        - in: path
+          name: id
+          description: identificador único do passaporte
+          type: string
+          required: true
+      responses:
+        '204':
+          description: Record deleted successfully
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '422':
+          description: Record can not be deleted
+  '/candidatos/{id}/relatorio/{option}':
+    get:
+      tags:
+        - Passaportes
+      summary: Relatório Profiler
+      description: |
+        Relatório Profiler obtido após responder o passaporte
+      operationId: relatorioPassaporte
+      parameters:
+        - in: path
+          name: id
+          description: identificador único do passaporte
+          required: true
+        - in: path
+          name: option
+          description: tipo de relatório. Vide <b>Tipos de Relatórios Profiler</b>
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Relatório Profiler
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    type: string
+                    example: >-
+                      https://system.solides.com/pt-BR/candidatos/relatorio/3781782783782743
+                    description: |
+                      url de acesso ao relatório Profiler
+        '400':
+          description: Bad request
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/Notfound'
+components:
+  schemas:
+    Ocorrencia:
+      type: object
+      properties:
+        id:
+          description: identificador da ocorrência
+          readOnly: true
+          allOf:
+            - type: integer
+              example: 1
+              format: int64
+        incidentDate:
+          type: string
+          format: date
+          example: 12/07/2017
+          description: data da ocorrência
+        classification:
+          type: string
+          example: Positivo
+          description: classificação para a ocorrência
+        comment:
+          type: string
+          example: Comentário para Fulano
+          description: comentário da ocorreência
+        value:
+          type: number
+          format: float
+          example: '12,90'
+          description: valor da ocorrência
+        typeIncident:
+          type: string
+          example: Atraso
+          description: tipo de ocorrência
+    Cargo:
+      type: object
+      properties:
+        id:
+          description: identificador único do cargo
+          readOnly: true
+          allOf:
+            - type: integer
+              example: 1
+              format: int64
+        name:
+          type: string
+          example: Cargo
+          description: nome do cargo
+        minimumWage:
+          type: number
+          format: float
+          example: 1200
+          description: piso salarial do cargo
+        briefDescription:
+          type: string
+          example: Breve descrição
+          description: descrição do cargo
+        activities:
+          type: string
+          example: Atividades
+          description: atividades para esse cargo
+    Departamento:
+      type: object
+      properties:
+        id:
+          description: identificador único do departamento
+          readOnly: true
+          allOf:
+            - type: integer
+              example: 1
+              format: int64
+        name:
+          type: string
+          example: TI
+          description: nome do departamento
+    Colaboradores:
+      type: object
+      properties:
+        id:
+          description: identificador único do colaborador
+          readOnly: true
+          allOf:
+            - type: integer
+              example: 1
+              format: int64
+        name:
+          type: string
+          example: Maria de Fátima Souza
+          description: nome completo do colaborador
+        idNumber:
+          type: string
+          example: '22426759666'
+          description: cpf do colaboraor
+        email:
+          type: string
+          example: email@example.com.br
+          description: email do colaborador
+        registration:
+          type: string
+          example: '381998'
+          description: matrícula do colaborador
+        dateAdmission:
+          type: string
+          example: 01/01/2018
+          description: data de admissão
+        active:
+          type: boolean
+          example: true
+          description: indica se o colaborador está ativo na empresa
+        position:
+          $ref: '#/components/schemas/Cargo'
+        departament:
+          $ref: '#/components/schemas/Departamento'
+    colaborador:
+      type: object
+      required:
+        - name
+        - email
+        - cpf
+      properties:
+        name:
+          type: string
+          example: Nome X
+          description: nome do colaborador
+        email:
+          type: string
+          example: email@example.com.br
+          description: email do colaborador
+        birthDate:
+          type: string
+          format: date
+          example: 01/01/1991
+          description: data de nascimento
+        gender:
+          type: string
+          example: Feminino
+          description: sexo do colaborador
+          enum:
+            - Feminino
+            - Masculino
+        maritalStatus:
+          type: string
+          example: Solteiro
+          description: estado civil do colaborador
+          enum:
+            - Casado
+            - Solteiro
+            - União Estável
+            - Divorciado
+            - Viúvo
+        education:
+          type: string
+          example: Doutorado
+          description: escolaridade do colaborador
+          enum:
+            - Curso extra-curricular
+            - Fundamental Incompleto
+            - Fundamental Completo
+            - Médio Incompleto
+            - Médio Completo
+            - Superior Incompleto
+            - Superior Completo
+            - Pós Graduação
+            - Mestrado
+            - Doutorado
+        nationality:
+          type: string
+          example: Brasileiro
+          description: nacionalidade do colaborador
+        birthPlace:
+          type: string
+          example: Belo Horizontino
+          description: naturalidade do colaborador
+        fatherName:
+          type: string
+          example: Nome X
+          description: nome do pai
+        motherName:
+          type: string
+          example: Nome Y
+          description: nome da mae
+        zipCode:
+          type: string
+          example: 00.000-000
+          description: cep do colaborador
+        neighborhood:
+          type: string
+          example: Savassi
+          description: bairro do colaborador
+        city:
+          type: string
+          example: Belo Horizonte
+          description: cidade do colaborador
+        stateAcronym:
+          type: string
+          example: MG
+          description: estado do colaborador
+        number:
+          type: string
+          example: '1'
+          description: número de endereço
+        additionalInformation:
+          type: string
+          example: Apto 1
+          description: complemento do endereco
+        phone:
+          type: string
+          example: (31) 33333333
+          description: telefone fixo
+        cellPhone:
+          type: string
+          example: (31) 999999999
+          description: telefone celular
+        emergencyPhoneNumber:
+          type: string
+          example: (31) 999999999
+          description: número de emergência
+        personalEmail:
+          type: string
+          example: email@gmail.com
+          description: email pessoal
+        corporateEmail:
+          type: string
+          example: email@example.com.br
+          description: email coorporativo
+        departamentId:
+          type: integer
+          format: int64
+          example: 1
+          description: identificador do departamento
+        positionId:
+          type: integer
+          format: int64
+          example: 1
+          description: identificador do cargo
+        typeContract:
+          type: string
+          example: CLT
+          description: tipo de contrato
+          enum:
+            - Efetivos
+            - Prestador de Serviço
+            - Parceiros
+            - Contrato
+            - Comissionado
+            - CLT + Comissão
+            - CLT
+            - Sócio
+            - Estatuários
+            - Concursados
+            - Estagiário
+            - Cooperado
+            - Outros
+        dateContract:
+          type: string
+          example: 01/01/2018
+          description: data de início do contrato
+        durationContract:
+          type: string
+          example: 12 meses
+          description: tempo de duração do contrato
+        contractExpirationDate:
+          type: string
+          format: date
+          example: 12/09/2019
+          description: data final do contrato
+        registration:
+          type: string
+          example: '3819'
+          description: matrícula do colaborador
+        salary:
+          type: number
+          format: float
+          example: 3798.9
+          description: salário do colaborador
+          maximum: 99999999.99
+        workShift:
+          type: string
+          example: Diurno
+          description: turno do colaborador
+        hierarchicalLevel:
+          type: string
+          example: Alto
+          description: nível hierárquico do colaborador
+          enum:
+            - Alto
+            - Baixo
+            - Médio
+        dateAdmission:
+          type: string
+          format: date
+          example: 01/01/2018
+          description: data de admissão do colaborador
+        idNumber:
+          type: string
+          example: '22426759666'
+          description: cpf do colaboraor
+        rg:
+          type: string
+          example: '390569422'
+          description: rg do colaborador
+        data_expedicao:
+          type: string
+          example: 02/01/2019
+          description: data de expedição do rg
+        orgao_expedidor:
+          type: string
+          example: SSP
+          description: orgão emissor do rg
+        cpf:
+          type: string
+          example: 01234567890
+          description: CPF do colaborador
+        voterRegistration:
+          type: string
+          example: '282850080221'
+          description: título de eleitor do colaborador
+        electoralZone:
+          type: string
+          example: '131'
+          description: zona eleitoral do colaborador
+        electoralSection:
+          type: string
+          example: Seção 29
+          description: seção eleitoral do colaborador
+        ctpsNum:
+          type: string
+          example: '22426759'
+          description: ctps num do colaborador
+        ctpsSerie:
+          type: string
+          example: '2242'
+          description: ctps serie do colaborador
+        reservist:
+          type: string
+          example: '39330569422'
+          description: número de reservista do colaborador
+        nqc:
+          type: string
+          example: '29998619616'
+          description: cnh do colaborador
+        bank:
+          type: string
+          example: Bradesco
+          description: nome do banco do colaborador
+        agency:
+          type: string
+          example: '2202'
+          description: número da agência do colaborador
+        checkingsAccount:
+          type: string
+          example: 0186958-2
+          description: conta corrente do colaborador
+        pis:
+          type: string
+          example: '48348426997'
+          description: pis do colaborador
+    Contato:
+      type: object
+      properties:
+        phone:
+          type: string
+          example: (31) 33333333
+          description: telefone
+        cellPhone:
+          type: string
+          example: (31) 999999999
+          description: celular
+        emergencyPhoneNumber:
+          type: string
+          example: (31) 999999999
+          description: telefone de emergência
+        personalEmail:
+          type: string
+          example: emailpessoal@example.com.br
+          description: email pessoal
+        corporateEmail:
+          type: string
+          example: emailcoorporativa@example.com.br
+          description: email corporativo
+    Documentos:
+      type: object
+      properties:
+        idNumber:
+          type: string
+          example: '22426759666'
+          description: cpf do colaboraor
+        rg:
+          type: string
+          example: '390569422'
+          description: rg do colaborador
+        dispatchDate:
+          type: string
+          example: 02/01/2019
+          description: data de expedição do rg
+        issuingBody:
+          type: string
+          example: SSP
+          description: orgão emissor do rg
+        voterRegistration:
+          type: string
+          example: '282850080221'
+          description: título de eleitor do colaborador
+        electoralZone:
+          type: string
+          example: '131'
+          description: zona eleitoral do colaborador
+        electoralSection:
+          type: string
+          example: Seção 29
+          description: seção eleitoral do colaborador
+        ctpsNum:
+          type: string
+          example: '22426759'
+          description: ctps num do colaborador
+        ctpsSerie:
+          type: string
+          example: '2242'
+          description: ctps serie do colaborador
+        reservist:
+          type: string
+          example: '39330569422'
+          description: número de reservista do colaborador
+        nqc:
+          type: string
+          example: '29998619616'
+          description: cnh do colaborador
+        bank:
+          type: string
+          example: Bradesco
+          description: nome do banco do colaborador
+        agency:
+          type: string
+          example: '2202'
+          description: número da agência do colaborador
+        checkingsAccount:
+          type: string
+          example: 0186958-2
+          description: conta corrente do colaborador
+        pis:
+          type: string
+          example: '48348426997'
+          description: pis do colaborador
+    Dependente:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Fulano X
+          description: nome do dependente
+        idNumber:
+          type: string
+          example: '22426759666'
+          description: cpf do dependente
+        rg:
+          type: string
+          example: '390569422'
+          description: rg do dependente
+        birthDate:
+          type: string
+          example: 01/01/2010
+          description: data de nascimento do dependente
+        relationship:
+          type: string
+          example: Filho(a)
+          description: tipo de parentesco do dependente
+    Ferias:
+      type: object
+      properties:
+        startDate:
+          type: string
+          example: 01/08/2017
+          description: data de início
+        endDate:
+          type: string
+          example: 02/09/2017
+          description: data de finm
+        dueDate:
+          type: string
+          example: 01/10/2019
+          description: data de vencimento das férias
+        numberOfVacationDays:
+          type: integer
+          example: 30
+          description: número de dias de férias
+        numberOfAllowanceDays:
+          type: integer
+          example: 0
+          description: dias de abono
+        allowancesAmount:
+          type: string
+          example: 'R$ 300,00'
+          description: valor do abono
+        enjoyed:
+          type: boolean
+          example: true
+          description: indica se as férias já foram usufruídas
+        note:
+          type: string
+          example: Observações
+          description: observação sobre as férias
+    Beneficio:
+      type: object
+      properties:
+        benefitName:
+          type: string
+          example: Plano de Saúde X
+          description: nome do benefício
+        typeBenefit:
+          type: string
+          example: Plano de Saúde
+          description: tipo do benefício
+        value:
+          type: string
+          example: 'R$ 397,00'
+          description: valor do benefício
+        benefitAppliedAs:
+          type: string
+          example: em_reais
+          description: como o valor do benefício é aplicado
+        dates:
+          type: string
+          example: Mensal
+          description: periodicidade do benefício
+        valueDiscount:
+          type: string
+          example: 'R$ 120,00'
+          description: valor descontado
+        discountOption:
+          type: string
+          example: valor_fixo
+          description: modo como o valor descontado é aplicado
+    MedicinaESeguranca:
+      type: object
+      properties:
+        dateExamProcedure:
+          type: string
+          example: 20/06/2017
+          description: data do exame/procedimento
+        typeOfExamProcedure:
+          type: string
+          example: Exame Admissional
+          description: tipo de exame/procedimento
+        description:
+          type: string
+          example: Descrição do exame/procedimento
+          description: descrição do exame/procedimento
+        doctorName:
+          type: string
+          example: Médico X
+          description: nome do médico
+        medicalRegister:
+          type: string
+          example: '1267'
+          description: crm do médico
+        icd:
+          type: string
+          example: A01 - Febres tifóide e paratifóide
+          description: cid
+        medicalEvaluation:
+          type: string
+          example: Avaliação médica
+          description: avaliação médica
+        finished:
+          type: boolean
+          example: true
+          description: indica se prodecimento foi finalizado ou não
+        able:
+          type: boolean
+          example: true
+          description: indica se o colaborador está apto a retornar aos trabalhos
+        dateOfNextExam:
+          type: string
+          example: 23/06/2017
+          description: data do próximo exame/procedimento
+        numberOfDaysOff:
+          type: integer
+          example: 2
+          description: número de dias de afastamento
+    Colaborador:
+      type: object
+      properties:
+        id:
+          description: identificador único do colaborador
+          readOnly: true
+          allOf:
+            - type: integer
+              example: 1
+              format: int64
+        name:
+          type: string
+          example: Maria de Fátima Souza
+          description: nome completo do colaborador
+        email:
+          type: string
+          example: email@example.com.br
+          description: email do colaborador
+        registration:
+          type: string
+          example: '381998'
+          description: matrícula do colaborador
+        birthDate:
+          type: string
+          example: 01/01/1987
+          description: data de nascimento do colaborador
+        gender:
+          type: string
+          example: Feminino
+          description: gênero
+        maritalStatus:
+          type: string
+          example: Solteiro
+          description: estado civil
+        nationality:
+          type: string
+          example: Brasileiro
+          description: nacionalidade
+        birthplace:
+          type: string
+          example: Belo Horizontino
+          description: naturalidade
+        education:
+          type: string
+          example: Superior Completo
+          description: data de início do contrato
+        dateAdmission:
+          type: string
+          example: 01/01/2018
+          description: data de admissão
+        salary:
+          type: string
+          example: 'R$ 3.890,00'
+          description: data de início do contrato
+        dateDismissal:
+          type: string
+          example: 02/01/2019
+          description: data de demissão
+        hierarchicalLevel:
+          type: string
+          example: Alto
+          description: nível hierárquico
+        typeContract:
+          type: string
+          example: CLT
+          description: tipo de contrato
+        dateContract:
+          type: string
+          example: 01/01/2018
+          description: data de início do contrato
+        durationContract:
+          type: string
+          example: 12 meses
+          description: duração do contrato
+        contractExpirationDate:
+          type: string
+          example: 01/01/2019
+          description: data de expiração do contrato
+        workShift:
+          type: string
+          example: Diurno
+          description: turno de trabalho do colaborador
+        position:
+          $ref: '#/components/schemas/Cargo'
+        departament:
+          $ref: '#/components/schemas/Departamento'
+        contact:
+          $ref: '#/components/schemas/Contato'
+        documents:
+          $ref: '#/components/schemas/Documentos'
+        dependents:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dependente'
+        vacations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ferias'
+        benefits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Beneficio'
+        healthAndSafety:
+          type: array
+          items:
+            $ref: '#/components/schemas/MedicinaESeguranca'
+    demitir:
+      type: object
+      required:
+        - dateDismissal
+        - formDismissal
+        - decisionDismissal
+      properties:
+        dateDismissal:
+          type: string
+          format: date
+          example: 14/07/2017
+          description: data da demissão do colaborador
+        reasonDismissalId:
+          type: integer
+          format: int64
+          example: 1
+          description: identificador único do motivo de demissão
+        formDismissal:
+          type: string
+          example: sem_justa_causa
+          description: forma da demissão
+          enum:
+            - sem_justa_causa
+            - com_justa_causa
+        decisionDismissal:
+          type: string
+          example: pediu_saida
+          description: decisão da demissão
+          enum:
+            - pediu_saida
+            - demitido
+    ExisteColaborador:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+          description: identificador único do colaborador
+        status:
+          type: integer
+          format: int64
+          example: 1
+          description: 'status do colaborador 1 = ativo, 2 = inativo'
+    Passaporte:
+      type: object
+      properties:
+        id:
+          description: identificador único do passaporte
+          readOnly: true
+          allOf:
+            - type: integer
+              example: 1
+              format: int64
+        name:
+          type: string
+          example: Maria de Souza
+          description: nome da pessoa que irá responder o passaporte
+        email:
+          type: string
+          example: mariadesouza@example.com
+          description: email para o qual será enviado o passaporte
+        idNumber:
+          type: string
+          example: '12345678909'
+          description: CPF da pessoa
+        gender:
+          type: string
+          example: Feminino
+          description: genêro da pessoa
+        dateOfBirth:
+          type: string
+          format: date
+          example: 01/07/1987
+          description: data de nascimento da pessoa
+        responseDate:
+          type: string
+          format: date
+          example: 12/07/2017
+          description: data de resposta do passaporte
+        sendDate:
+          type: string
+          format: date
+          example: 12/07/2017
+          description: data de envio do passaporte
+        expirationDate:
+          type: string
+          format: date
+          example: 12/07/2017
+          description: data de expiração do passaporte
+        state:
+          type: string
+          example: respondido
+          description: staus do passaporte
+    candidato:
+      type: object
+      required:
+        - name
+        - email
+        - sendResultToEmail
+        - expirationDate
+      properties:
+        name:
+          type: string
+          example: José da Silva
+          description: nome completo da pessoa que irá responder o passaporte
+        email:
+          type: string
+          example: jose@example.com
+          description: email para o qual será enviado o passaporte
+        sendResultToEmail:
+          type: boolean
+          example: true
+          description: >
+            se marcado como true, o resultado do teste será enviado
+            automaticamente para o email cadastrado
+          default: false
+        expirationDate:
+          type: string
+          format: date
+          example: 12/09/2017
+          description: data de expiração do passaporte
+  responses:
+    Unauthorized:
+      description: Unauthorized
+    Notfound:
+      description: Not found
+    Status_400:
+      description: 'Invalid input, invalid object'
+    Status_204:
+      description: Record deleted successfully
+    Status_422:
+      description: Record can not be deleted
+  requestBodies:
+    Ocorrencia:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Ocorrencia'
+      description: Parâmetros para registrar uma nova ocorrência.
+      required: true
+    Colaborador:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/colaborador'
+      description: Parâmetros para registrar um colaborador.
+      required: true
+    DemitirColaborador:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/demitir'
+      description: Parâmetros para registrar uma demissão.
+      required: true
+    Candidato:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/candidato'
+      description: Parâmetros para registrar um novo passaporte.
+      required: true

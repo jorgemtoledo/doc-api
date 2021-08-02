@@ -1,0 +1,22 @@
+type: object
+properties:
+  course:
+    type: string
+    example: "Ciência da Computação"
+    description: nome do curso
+  institution:
+    type: string
+    example: "Instituição"
+    description: nome da instituição de ensino
+  startDate:
+    type: string
+    example: "20/06/2016"
+    description: data de início
+  endDate:
+    type: string
+    example: "20/06/2017"
+    description: data final
+  grade:
+    type: string
+    example: "Doutorado"
+    description: formação/titulação 

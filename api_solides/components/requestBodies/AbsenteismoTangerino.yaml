@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../parameters/absenteismo/absenteismoTangerino.yaml
+description: Parâmetros para atualizar um absenteísmo
+required: true

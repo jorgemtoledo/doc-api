@@ -1,0 +1,46 @@
+get:
+  tags:
+    - Colaboradores
+  summary: Busca por todos colaboradores
+  description: |
+    Listar todos colaboradores da empresa
+  operationId: searchColaboradores
+  responses:
+    '200':
+      description: Array de todos os colaboradores cadastrados
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Colaboradores.yaml
+    '400':
+      description: Bad request
+    '401':
+      $ref: ../../components/responses/Unauthorized.yaml 
+    '404':
+      $ref: ../../components/responses/Notfound.yaml
+
+post:
+  tags:
+    - Colaboradores
+  summary: Registra um novo colaborador 
+  operationId: addColaborador
+  description: Registra um novo colaborador
+  requestBody:
+    $ref: ../../components/requestBodies/Colaborador.yaml
+  responses:
+    201:
+      description: Record created successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Colaboradores.yaml
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed

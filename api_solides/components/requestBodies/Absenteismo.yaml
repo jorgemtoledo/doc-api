@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../parameters/absenteismo/absenteismo.yaml
+description: Parâmetros para registrar um novo absenteísmo.
+required: true

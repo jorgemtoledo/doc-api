@@ -1,0 +1,30 @@
+type: object
+properties:
+  benefitName:
+    type: string
+    example: "Plano de Saúde X"
+    description: nome do benefício
+  typeBenefit:
+    type: string
+    example: "Plano de Saúde"
+    description: tipo do benefício
+  value:
+    type: string
+    example: "R$ 397,00"
+    description: valor do benefício
+  benefitAppliedAs:
+    type: string
+    example: "em_reais"
+    description: como o valor do benefício é aplicado
+  dates:
+    type: string
+    example: "Mensal"
+    description: periodicidade do benefício
+  valueDiscount:
+    type: string
+    example: "R$ 120,00"
+    description: valor descontado
+  discountOption:
+    type: string
+    example: "valor_fixo"
+    description: modo como o valor descontado é aplicado

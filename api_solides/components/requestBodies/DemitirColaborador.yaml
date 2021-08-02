@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../parameters/colaborador/demitir.yaml
+description: Parâmetros para registrar uma demissão.
+required: true

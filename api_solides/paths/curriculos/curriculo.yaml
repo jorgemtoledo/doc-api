@@ -1,0 +1,46 @@
+get:
+  tags:
+    - Currículos
+  summary: Busca por todos os currículos
+  description: |
+    Busca por todos os currículos da empresa
+  operationId: searchCurriculos
+  responses:
+    200:
+      description: Array de todos os currículos cadastrados
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Curriculo.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml 
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+
+post:
+  tags:
+    - Currículos
+  summary: Registra um novo currículo
+  operationId: addCurriculo
+  description: Registra um novo currículo na empresa
+  requestBody:
+    $ref: ../../components/requestBodies/Curriculo.yaml
+  responses:
+    201:
+      description: Record created successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Curriculo.yaml
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed

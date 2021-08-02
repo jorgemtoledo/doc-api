@@ -1,0 +1,26 @@
+type: object
+required: 
+- dateDismissal
+- formDismissal
+- decisionDismissal
+properties:
+  dateDismissal:
+    type: string
+    format: date
+    example: "14/07/2017"
+    description: data da demissão do colaborador
+  reasonDismissalId: 
+    type: integer
+    format: int64
+    example: 1
+    description: identificador único do motivo de demissão
+  formDismissal:
+    type: string
+    example: sem_justa_causa
+    description: forma da demissão 
+    enum: [sem_justa_causa, com_justa_causa]
+  decisionDismissal:
+    type: string
+    example: pediu_saida
+    description: decisão da demissão
+    enum: [pediu_saida, demitido]

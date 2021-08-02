@@ -1,0 +1,26 @@
+type: object
+required:
+- dateRegistration
+- idNumber
+properties:
+  dateRegistration:
+    type: string
+    example: "2018-08-19 08:20:34"
+    description: "Horário do registro do Absenteísmo"
+    format: "YYYY-MM-DD HH:MM:SS"
+  idNumber:
+    type: string
+    example: "123456789101"
+    description: "Número de cpf do colaborador sem formatação"
+  type:
+    type: string
+    example: "Chegada"
+    description: "Tipo de Absenteísmo"
+  location:
+    type: string
+    example: "Belo Horizonte, MG"
+    description: "Localização no qual foi registrado o Absenteísmo"
+  note:
+    type: string
+    example: "Uma observação sobre o Absenteísmo registrado"
+    description: "Observação sobre o Absenteísmo registrado"

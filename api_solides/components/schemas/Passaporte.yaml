@@ -1,0 +1,49 @@
+type: object
+properties:
+  id:
+    description: identificador único do passaporte
+    readOnly: true
+    allOf:
+      - type: integer
+        example: 1
+        format: int64
+  name:
+    type: string
+    example: Maria de Souza
+    description: nome da pessoa que irá responder o passaporte
+  email:
+    type: string
+    example: mariadesouza@example.com
+    description: email para o qual será enviado o passaporte
+  idNumber:
+    type: string
+    example: "12345678909"
+    description: CPF da pessoa
+  gender:
+    type: string
+    example: "Feminino"
+    description: genêro da pessoa
+  dateOfBirth:
+    type: string
+    format: date
+    example: "01/07/1987"
+    description: data de nascimento da pessoa
+  responseDate:
+    type: string
+    format: date
+    example: "12/07/2017"
+    description: data de resposta do passaporte
+  sendDate:
+    type: string
+    format: date
+    example: "12/07/2017"
+    description: data de envio do passaporte
+  expirationDate:
+    type: string
+    format: date
+    example: "12/07/2017"
+    description: data de expiração do passaporte 
+  state:
+    type: string
+    example: respondido
+    description: staus do passaporte

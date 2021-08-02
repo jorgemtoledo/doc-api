@@ -1,0 +1,59 @@
+get:
+  tags:
+    - Currículos
+  summary: Busca por um currículo
+  description: |
+    Busca por um currículo na empresa
+  operationId: searchCurriculo
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único do currículo
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    200:
+      description: Array de todos os currículos cadastrados
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Curriculo.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml 
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+
+delete:
+  tags:
+    - Currículos
+  summary: Deleta um curriculo
+  operationId: deleteCurriculo
+  description: |
+    Deleta um curriculo na empresa
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único do curriculo
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    204:
+      description: Record deleted successfully
+    400:
+      description: Bad request
+    401:
+      description: Unauthorized
+    404:
+      description: Not found
+    422:
+      description: Record can not be deleted

@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Ocorrencia.yaml
+description: Parâmetros para registrar uma nova ocorrência.
+required: true

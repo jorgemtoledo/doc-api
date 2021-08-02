@@ -1,0 +1,105 @@
+type: object
+properties:
+  id:
+    description: identificador único do colaborador
+    readOnly: true
+    allOf:
+      - type: integer
+        example: 1
+        format: int64
+  name:
+    type: string
+    example: Maria de Fátima Souza
+    description: nome completo do colaborador
+  email:
+    type: string
+    example: email@example.com.br
+    description: email do colaborador
+  registration:
+    type: string
+    example: "381998"
+    description: matrícula do colaborador
+  birthDate:
+    type: string
+    example: "01/01/1987"
+    description: data de nascimento do colaborador
+  gender:
+    type: string
+    example: "Feminino"
+    description: gênero
+  maritalStatus:
+    type: string
+    example: "Solteiro"
+    description: estado civil
+  nationality:
+    type: string
+    example: "Brasileiro"
+    description: nacionalidade
+  birthplace:
+    type: string
+    example: "Belo Horizontino"
+    description: naturalidade
+  education:
+    type: string
+    example: "Superior Completo"
+    description: data de início do contrato
+  dateAdmission:
+    type: string
+    example: "01/01/2018"
+    description: data de admissão
+  salary:
+    type: string
+    example: "R$ 3.890,00"
+    description: data de início do contrato
+  dateDismissal:
+    type: string
+    example: "02/01/2019"
+    description: data de demissão 
+  hierarchicalLevel:
+    type: string
+    example: Alto
+    description: nível hierárquico
+  typeContract:
+    type: string
+    example: "CLT"
+    description: tipo de contrato
+  dateContract:
+    type: string
+    example: "01/01/2018"
+    description: data de início do contrato
+  durationContract:
+    type: string
+    example: "12 meses"
+    description: duração do contrato
+  contractExpirationDate:
+    type: string
+    example: "01/01/2019"
+    description: data de expiração do contrato
+  workShift:
+    type: string
+    example: Diurno
+    description: turno de trabalho do colaborador
+  position:
+    $ref: ../../components/schemas/Cargo.yaml
+  departament:
+    $ref: ../../components/schemas/Departamento.yaml
+  contact:
+    $ref: ../../components/schemas/Contato.yaml
+  documents:
+    $ref: ../../components/schemas/Documentos.yaml
+  dependents:
+    type: array
+    items:
+      $ref: ../../components/schemas/Dependente.yaml
+  vacations:
+    type: array
+    items:
+      $ref: ../../components/schemas/Ferias.yaml
+  benefits:
+    type: array
+    items:
+      $ref: ../../components/schemas/Beneficio.yaml
+  healthAndSafety:
+    type: array
+    items:
+      $ref: ../../components/schemas/MedicinaESeguranca.yaml

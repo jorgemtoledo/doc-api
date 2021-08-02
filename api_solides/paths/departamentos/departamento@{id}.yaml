@@ -1,0 +1,29 @@
+get:
+  tags:
+    - Departamentos
+  summary: Busca por um departamento
+  description: |
+    Busca por um departamento
+  operationId: searchDepartamento
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único da departamento
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    '200':
+      description: Departamento específico
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Departamento.yaml
+    '400':
+      description: Bad request
+    '401':
+      $ref: ../../components/responses/Unauthorized.yaml 
+    '404':
+      $ref: ../../components/responses/Notfound.yaml

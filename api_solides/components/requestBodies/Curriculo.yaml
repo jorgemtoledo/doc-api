@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../parameters/curriculo/curriculo.yaml
+description: Parâmetros para registrar um novo passaporte.
+required: true

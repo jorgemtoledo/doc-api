@@ -1,0 +1,27 @@
+get:
+  tags: 
+    - Colaboradores
+  summary: Verifica se um colaborador existe na empresa
+  operationId: existeColaborador
+  parameters:
+  - in: path
+    name: cpf
+    description: Número do documento do colaborador
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 99988877766
+  responses:
+    200:
+      description: Colaborador específico
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/colaboradores/ExisteColaborador.yaml
+    400:
+      description: Bad request
+    401:
+      description: Unauthorized
+    404:
+      description: Not found

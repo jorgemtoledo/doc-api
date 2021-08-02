@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Currículos
+  summary: Vincula um candidato à uma vaga
+  operationId: candidatarCurriculo
+  description: Vincula um candidato à uma vaga na empresa
+  parameters:
+  - in: path
+    name: cpf
+    description: CPF do candidato
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 99988877766
+  - in: path
+    name: vaga_id
+    description: Identificador único da vaga
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 85594475
+  responses:
+    200:
+      description: Candidato adicionado à vaga com sucesso
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed

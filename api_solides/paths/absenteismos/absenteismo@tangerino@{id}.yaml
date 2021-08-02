@@ -1,0 +1,32 @@
+put:
+  tags:
+    - Absenteísmos
+  summary: Atualiza informações de um absenteísmo procurado pelo tangerino_id
+  operationId: updateAbsenteismoTangerino
+  description: Atualiza informações de um absenteísmo
+  parameters: 
+  - in: path
+    name: id
+    description: tangerino_id único do absenteísmo
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  requestBody:
+    $ref: ../../components/requestBodies/AbsenteismoTangerino.yaml
+  responses:
+    200:
+      description: Record updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Absenteismo.yaml
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed

@@ -1,0 +1,54 @@
+openapi: 3.0.2
+# ----------------------------- Info -------------------------------------------#
+info:
+  version: ''
+  title: ''
+  # termsOfService: 'https://example.com/terms/'
+  # contact:
+  #   email: contact@example.com
+  #   url: 'http://example.com/contact'
+  # license:
+  #   # name: Apache 2.0
+  #   # url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  x-logo:
+    url: 'https://system.solides.com/assets/logo_solides_2021-f5de986164fc87279f39eb07cba54e34548fd74e25288bb4ee9dbaa6ab31d9e2.svg'
+  # ----------------------------- Info -------------------------------------------#
+
+  description: >
+    <div class="introducao">xxxxxxx</div>
+    <div class="versao">1.0.17</div>
+    This is an **example** API to demonstrate features of OpenAPI specification
+
+# externalDocs:
+#   description: Find out how to create a GitHub repo for your OpenAPI definition.
+#   url: 'https://github.com/Rebilly/generator-openapi-repo'
+tags:
+  - name: Echo
+    description: Example echo operations
+  - name: User
+    description: Operations about user
+servers:
+  - url: 'http://example.com/api/v1'
+  - url: 'https://example.com/api/v1'
+paths:
+  '/users/{username}':
+    $ref: 'paths/users@{username}.yaml'
+  /echo:
+    $ref: paths/echo.yaml
+components:
+  securitySchemes:
+    main_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: 'http://example.com/api/oauth/dialog'
+          scopes:
+            'read:users': read users info
+            'write:users': modify or remove users
+    api_key:
+      type: apiKey
+      in: header
+      name: api_key
+    basic_auth:
+      type: http
+      scheme: basic

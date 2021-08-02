@@ -1,0 +1,22 @@
+type: object
+properties:
+  position:
+    type: string
+    example: "Desenvolvedor"
+    description: nome do cargo
+  company:
+    type: string
+    example: Empresa Y
+    description: nome da empresa
+  startDate:
+    type: string
+    example: "20/06/2016"
+    description: data de início
+  endDate:
+    type: string
+    example: "20/06/2017"
+    description: data final
+  activitiesDescription:
+    type: string
+    example: Descrições das atividades
+    description: descrição das atividades

@@ -1,0 +1,46 @@
+type: object
+properties:
+  dateExamProcedure:
+    type: string
+    example: "20/06/2017"
+    description: data do exame/procedimento
+  typeOfExamProcedure:
+    type: string
+    example: "Exame Admissional"
+    description: tipo de exame/procedimento
+  description:
+    type: string
+    example: "Descrição do exame/procedimento"
+    description: descrição do exame/procedimento
+  doctorName:
+    type: string
+    example: "Médico X"
+    description: nome do médico
+  medicalRegister:
+    type: string
+    example: "1267"
+    description: crm do médico 
+  icd:
+    type: string
+    example: "A01 - Febres tifóide e paratifóide"
+    description: cid
+  medicalEvaluation:
+    type: string
+    example: "Avaliação médica"
+    description: avaliação médica
+  finished:
+    type: boolean
+    example: true
+    description: indica se prodecimento foi finalizado ou não 
+  able:
+    type: boolean
+    example: true
+    description: indica se o colaborador está apto a retornar aos trabalhos
+  dateOfNextExam:
+    type: string
+    example: "23/06/2017"
+    description: data do próximo exame/procedimento
+  numberOfDaysOff:
+    type: integer
+    example: 2
+    description: número de dias de afastamento

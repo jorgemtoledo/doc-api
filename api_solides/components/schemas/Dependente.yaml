@@ -1,0 +1,22 @@
+type: object
+properties:
+  name:
+    type: string
+    example: Fulano X
+    description: nome do dependente
+  idNumber:
+    type: string
+    example: "22426759666"
+    description: cpf do dependente
+  rg:
+    type: string
+    example: "390569422"
+    description: rg do dependente
+  birthDate:
+    type: string
+    example: "01/01/2010"
+    description: data de nascimento do dependente
+  relationship:
+    type: string
+    example: "Filho(a)"
+    description: tipo de parentesco do dependente

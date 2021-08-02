@@ -1,0 +1,210 @@
+type: object
+required: 
+- name
+- email
+- cpf
+properties:
+  name:
+    type: string
+    example: "Nome X"
+    description: nome do colaborador
+  email:
+    type: string
+    example: "email@example.com.br"
+    description: email do colaborador
+  birthDate:
+    type: string
+    format: date
+    example: "01/01/1991"
+    description: data de nascimento
+  gender:
+    type: string
+    example: "Feminino"
+    description: sexo do colaborador
+    enum: [Feminino, Masculino]
+  maritalStatus:
+    type: string
+    example: "Solteiro"
+    description: estado civil do colaborador
+    enum: [Casado, Solteiro, União Estável, Divorciado, Viúvo]
+  education:
+    type: string
+    example: "Doutorado"
+    description: escolaridade do colaborador
+    enum: [Curso extra-curricular, Fundamental Incompleto, Fundamental Completo, Médio Incompleto, Médio Completo, Superior Incompleto, Superior Completo, Pós Graduação, Mestrado, Doutorado]
+  nationality:
+    type: string
+    example: "Brasileiro"
+    description: nacionalidade do colaborador
+  birthPlace:
+    type: string
+    example: "Belo Horizontino"
+    description: naturalidade do colaborador
+  fatherName:
+    type: string
+    example: "Nome X"
+    description: nome do pai
+  motherName:
+    type: string
+    example: "Nome Y"
+    description: nome da mae
+  zipCode:
+    type: string
+    example: "00.000-000"
+    description: cep do colaborador
+  neighborhood:
+    type: string
+    example: "Savassi"
+    description: bairro do colaborador
+  city:
+    type: string
+    example: "Belo Horizonte"
+    description: cidade do colaborador
+  stateAcronym:
+    type: string
+    example: "MG"
+    description: estado do colaborador
+  number:
+    type: string
+    example: "1"
+    description: número de endereço 
+  additionalInformation:
+    type: string
+    example: "Apto 1"
+    description: complemento do endereco
+  phone:
+    type: string
+    example: "(31) 33333333"
+    description: telefone fixo
+  cellPhone:
+    type: string
+    example: "(31) 999999999"
+    description: telefone celular
+  emergencyPhoneNumber:
+    type: string
+    example: "(31) 999999999"
+    description: número de emergência
+  personalEmail:
+    type: string
+    example: "email@gmail.com"
+    description: email pessoal
+  corporateEmail:
+    type: string
+    example: "email@example.com.br"
+    description: email coorporativo
+  departamentId:
+    type: integer
+    format: int64
+    example: 1
+    description: identificador do departamento
+  positionId:
+    type: integer
+    format: int64
+    example: 1
+    description: identificador do cargo
+  typeContract:
+    type: string
+    example: "CLT"
+    description: tipo de contrato
+    enum: [Efetivos, Prestador de Serviço, Parceiros, Contrato, Comissionado, CLT + Comissão, CLT, Sócio, Estatuários, Concursados, Estagiário, Cooperado, Outros]
+  dateContract:
+    type: string
+    example: "01/01/2018"
+    description: data de início do contrato
+  durationContract:
+    type: string
+    example: "12 meses"
+    description: tempo de duração do contrato
+  contractExpirationDate:
+    type: string
+    format: date
+    example: "12/09/2019"
+    description: data final do contrato
+  registration:
+    type: string
+    example: "3819"
+    description: matrícula do colaborador
+  salary:
+    type: number
+    format: float
+    example: 3798.90
+    description: salário do colaborador
+    maximum: 99999999.99
+  workShift:
+    type: string
+    example: "Diurno"
+    description: turno do colaborador
+  hierarchicalLevel:
+    type: string
+    example: "Alto"
+    description: nível hierárquico do colaborador
+    enum: [Alto, Baixo, Médio]
+  dateAdmission:
+    type: string
+    format: date
+    example: "01/01/2018"
+    description: data de admissão do colaborador
+  idNumber:
+    type: string
+    example: "22426759666"
+    description: cpf do colaboraor
+  rg:
+    type: string
+    example: "390569422"
+    description: rg do colaborador
+  data_expedicao:
+    type: string
+    example: "02/01/2019"
+    description: data de expedição do rg
+  orgao_expedidor:
+    type: string
+    example: "SSP"
+    description: orgão emissor do rg
+  cpf:
+    type: string
+    example: "01234567890"
+    description: CPF do colaborador
+  voterRegistration:
+    type: string
+    example: "282850080221"
+    description: título de eleitor do colaborador
+  electoralZone:
+    type: string
+    example: "131"
+    description: zona eleitoral do colaborador
+  electoralSection:
+    type: string
+    example: "Seção 29"
+    description: seção eleitoral do colaborador
+  ctpsNum:
+    type: string
+    example: "22426759"
+    description: ctps num do colaborador
+  ctpsSerie:
+    type: string
+    example: "2242"
+    description: ctps serie do colaborador
+  reservist:
+    type: string
+    example: "39330569422"
+    description: número de reservista do colaborador
+  nqc:
+    type: string
+    example: "29998619616"
+    description: cnh do colaborador
+  bank:
+    type: string
+    example: "Bradesco"
+    description: nome do banco do colaborador
+  agency:
+    type: string
+    example: "2202"
+    description: número da agência do colaborador
+  checkingsAccount:
+    type: string
+    example: "0186958-2"
+    description: conta corrente do colaborador
+  pis:
+    type: string
+    example: "48348426997"
+    description: pis do colaborador

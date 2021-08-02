@@ -1,0 +1,29 @@
+get:
+  tags:
+    - Cargos
+  summary: Busca por um cargo
+  description: |
+    Busca por um cargo da empresa
+  operationId: searchCargo
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único do motivo
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    200:
+      description: Cargo específico
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Cargo.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml 
+    404:
+      $ref: ../../components/responses/Notfound.yaml

@@ -1,0 +1,56 @@
+type: object
+required:
+- title
+- description
+properties:
+  title:
+    type: string
+    example: Nome da Vaga
+    description: nome da vaga
+  positionId:
+    type: integer
+    format: int64
+    example: 1
+    description: identificador do cargo
+  hierarchicalLevel:
+    type: string
+    example: Alto
+    description: nível hierárquico
+    enum: [Alto, Baixo, Médio]
+  finalDate:
+    type: string
+    format: date
+    example: "11/07/2017"
+    description: data final
+  minimumWage:
+    type: number
+    format: float
+    example: 1200.00
+    description: piso salarial
+    maximum: 99999999.99
+  maximumWage:
+    type: number
+    format: float
+    example: 4300.00
+    description: teto salarial
+    maximum: 99999999.99
+  description:
+    type: string
+    example: Descrição da vaga 
+    description: descrição da vaga
+  requirements:
+    type: string
+    example: Requisistos da vaga
+    description: requisitos da vaga
+  active:
+    type: boolean
+    example: true
+    description: |
+      define se a vaga está ativa ou inativa
+    default: false
+  type:
+    type: string
+    example: "Pública"
+    enum: [Pública, Oculta]
+    description: |
+      define se a vaga é publica ou oculta

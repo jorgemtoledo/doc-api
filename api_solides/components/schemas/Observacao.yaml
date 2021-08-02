@@ -1,0 +1,10 @@
+type: object
+properties:
+  note:
+    type: string
+    example: Observacao
+    description: observãação
+  date:
+    type: string
+    example: "20/06/2017"
+    description: data da observação

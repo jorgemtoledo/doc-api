@@ -1,0 +1,90 @@
+get:
+  tags:
+    - Absenteísmos
+  summary: Busca por um absenteísmo
+  description: |
+    Busca por um absenteísmo da empresa
+  operationId: searchAbsenteismo
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único do absenteismo
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    200:
+      description: Absenteísmo específico
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Absenteismo.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml 
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+
+put:
+  tags:
+    - Absenteísmos
+  summary: Atualiza informações de um absenteísmo
+  operationId: updateAbsenteismo
+  description: Atualiza informações de um absenteísmo
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único do absenteísmo
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  requestBody:
+    $ref: ../../components/requestBodies/Absenteismo.yaml
+  responses:
+    200:
+      description: Record updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Absenteismo.yaml
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed
+
+delete:
+  tags:
+    - Absenteísmos
+  summary: Deleta um absenteísmo
+  operationId: deleteAbsenteismo
+  description: |
+    Deleta um absenteísmo
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único do absenteísmo
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    204:
+      description: Record deleted successfully
+    400:
+      description: Bad request
+    401:
+      description: Unauthorized
+    404:
+      description: Not found
+    422:
+      description: Record can not be deleted

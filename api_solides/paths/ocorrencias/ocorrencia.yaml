@@ -1,0 +1,46 @@
+get:
+  tags:
+    - Ocorrências
+  summary: Busca por todas ocorrências
+  description: |
+    Listar todas as ocorrências da empresa
+  operationId: searchOcorrencias
+  responses:
+    '200':
+      description: Array de Ocorrências
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Ocorrencia.yaml
+    '400':
+      description: Bad request
+    '401':
+      $ref: ../../components/responses/Unauthorized.yaml 
+    '404':
+      $ref: ../../components/responses/Notfound.yaml
+
+post:
+  tags:
+    - Ocorrências
+  summary: Registra uma nova ocorrência  
+  operationId: addOcorrencia
+  description: Registra uma nova ocorrência
+  requestBody:
+    $ref: ../../components/requestBodies/Ocorrencia.yaml
+  responses:
+    201:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Ocorrencia.yaml
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422: 
+      $ref: ../../components/responses/Notfound.yaml

@@ -1,0 +1,10 @@
+type: object
+properties:
+  name:
+    type: string
+    example: Português
+    description: nome do idioma
+  level:
+    type: string
+    example: Fluente
+    description: nível de conhecimento

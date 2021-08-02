@@ -1,0 +1,90 @@
+get:
+  tags:
+    - Passaportes
+  summary: Busca por um passaporte
+  description: |
+    Busca por um passaporte na empresa
+  operationId: searchPassaporte
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único do candidato
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    '200':
+      description: Passaporte específico
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Passaporte.yaml
+    '400':
+      description: Bad request
+    '401':
+      $ref: ../../components/responses/Unauthorized.yaml 
+    '404':
+      $ref: ../../components/responses/Notfound.yaml
+
+put:
+  tags:
+    - Passaportes
+  summary: Atualiza informações de um passaporte
+  operationId: updatePassaporte
+  description: Atualiza informações de um Passaporte cujo status seja não iniciado
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único do passaporte
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  requestBody:
+    $ref: ../../components/requestBodies/Candidato.yaml
+  responses:
+    200:
+      description: Record updated successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Passaporte.yaml
+    400:
+      $ref: ../../components/responses/Status_400.yaml
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed
+
+delete:
+  tags:
+    - Passaportes
+  summary: Deleta um passaporte
+  operationId: deletePassaporte
+  description: |
+    Deleta um Passaporte cujo status seja não iniciado
+  parameters: 
+  - in: path
+    name: id
+    description: identificador único do passaporte
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  responses:
+    204:
+      description: Record deleted successfully
+    400:
+      description: Bad request
+    401:
+      description: Unauthorized
+    404:
+      description: Not found
+    422:
+      description: Record can not be deleted

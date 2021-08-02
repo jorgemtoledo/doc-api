@@ -1,0 +1,43 @@
+get:
+  tags:
+    - Passaportes
+  summary: Relatório Profiler
+  description: |
+    Relatório Profiler obtido após responder o passaporte
+  operationId: relatorioPassaporte
+  parameters:
+  - in: path
+    name: id
+    description: identificador único do passaporte
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 1
+  - in: path
+    name: option
+    description: tipo de relatório. Vide <b>Tipos de Relatórios Profiler</b>
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+      example: 2566
+  responses:
+    200:
+      description: Relatório Profiler
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              url:
+                type: string
+                example: "https://system.solides.com/pt-BR/candidatos/relatorio/3781782783782743"
+                description: |
+                  url de acesso ao relatório Profiler
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml
+    404:
+      $ref: ../../components/responses/Notfound.yaml
+    422:
+      description: Unprocessed

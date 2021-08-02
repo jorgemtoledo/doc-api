@@ -1,0 +1,31 @@
+type: object
+properties:
+  id:
+    description: identificador da ocorrência
+    readOnly: true
+    allOf:
+      - type: integer
+        example: 1
+        format: int64
+  incidentDate:
+    type: string
+    format: date
+    example: "12/07/2017"
+    description: data da ocorrência
+  classification:
+    type: string
+    example: Positivo
+    description: classificação para a ocorrência 
+  comment:
+    type: string
+    example: Comentário para Fulano
+    description: comentário da ocorreência
+  value:
+    type: number
+    format: float
+    example: 12,90
+    description: valor da ocorrência
+  typeIncident:
+    type: string
+    example: Atraso
+    description: tipo de ocorrência

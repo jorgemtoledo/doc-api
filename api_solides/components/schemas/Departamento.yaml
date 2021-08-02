@@ -1,0 +1,13 @@
+type: object
+properties:
+  id:
+    description: identificador único do departamento
+    readOnly: true
+    allOf:
+      - type: integer
+        example: 1
+        format: int64
+  name:
+    type: string
+    example: TI
+    description: nome do departamento

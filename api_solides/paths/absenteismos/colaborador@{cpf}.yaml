@@ -1,0 +1,30 @@
+get:
+  tags:
+    - Absenteísmos
+  summary: Busca por absenteísmos de um colaborador
+  description: |
+    Busca por absenteísmos de um colaborador na empresa
+  operationId: searchAbsenteismosColaborador
+  parameters: 
+  - in: path
+    name: cpf
+    description: cpf de um colaborador específico
+    required: true
+    schema:
+      type: integer
+      example: 99988877766
+  responses:
+    200:
+      description: Array de todos os absenteísmos cadastrados para um colaborador
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/Absenteismo.yaml
+    400:
+      description: Bad request
+    401:
+      $ref: ../../components/responses/Unauthorized.yaml 
+    404:
+      $ref: ../../components/responses/Notfound.yaml

@@ -1,0 +1,26 @@
+type: object
+properties:
+  id:
+    description: identificador único do cargo
+    readOnly: true
+    allOf:
+      - type: integer
+        example: 1
+        format: int64
+  name:
+    type: string
+    example: Cargo
+    description: nome do cargo
+  minimumWage:
+    type: number
+    format: float
+    example: 1200.00
+    description: piso salarial do cargo
+  briefDescription:
+    type: string
+    example: Breve descrição
+    description: descrição do cargo
+  activities:
+    type: string
+    example: Atividades
+    description: atividades para esse cargo

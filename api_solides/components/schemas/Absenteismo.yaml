@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    example: 1
+    description: identificador único do absenteísmo 
+  dateTimeAbsenteeism:
+    type: string
+    example: "11/07/2017 08:30:00"
+    description: horário do registro do absenteísmo
+  type:
+    type: string
+    example: "Saída"
+    description: representa o tipo de absenteísmo
+  location:
+    type: string
+    example: "Belo Horizonte"
+    description: local no qual o absenteísmo foi registrado 
+  tangerinoId:
+    type: integer
+    format: int64
+    example: 1
+    description: identificador único do tangerino
+  note:
+    type: string
+    example: "Observação do Absenteísmo"
+    description: observação sobre o absenteísmo registrado
+  employee:
+    $ref: ../../components/schemas/Colaboradores.yaml

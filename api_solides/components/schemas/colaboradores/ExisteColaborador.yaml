@@ -1,0 +1,12 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    example: 1
+    description: identificador único do colaborador
+  status:
+    type: integer
+    format: int64
+    example: 1
+    description: status do colaborador 1 = ativo, 2 = inativo
