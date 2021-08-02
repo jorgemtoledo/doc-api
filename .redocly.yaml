@@ -8,6 +8,7 @@ lint:
     no-unused-components: warning
     no-ambiguous-paths: off
 referenceDocs:
+  showConsole: true # Enable the API Console (the Try it functionality).
   htmlTemplate: ./docs/index.html
   theme:
     colors:
